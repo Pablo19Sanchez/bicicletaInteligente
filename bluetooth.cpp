@@ -4,9 +4,9 @@
 #include "pendiente.h"
 #include "sensor.h"
 
-#define INTERRUPCION_BT 4
+#define INTERRUPCION_BT 4 // Número de la interrupción (pin 19)
 
-int modo = 1; // Modo de funcionamiento del sistema
+int modo = 0; // Modo de funcionamiento del sistema
 // Variables que controlan la comunicación
 char c = ' ';
 static char saludo = 'D';
@@ -46,6 +46,7 @@ void configurarBT(){
 // Envía los datos vía bluetooth
 void envioDatos(){
   Serial1.write(saludo);
+  Serial1.write(coma);
   Serial1.write(int(anguloX));
   Serial1.write(coma);
   Serial1.write(temperatura);
