@@ -53,7 +53,7 @@ void loop() {
         acelerador = 0;
       }
       else{
-        acelerador = 55;
+        acelerador = 120;
       }
       analogWrite(PIN_ACELERADOR, acelerador);
       break;
@@ -77,10 +77,10 @@ void decisionAcelerador(){
     }
     else {
       if (velocidad < velocidad_paseo){
-        acelerador_deseable = 75;
+        acelerador_deseable = 120;
       }
       else if (velocidad < velocidad_crucero){
-        acelerador_deseable = 75*((velocidad_crucero - velocidad)/(velocidad_crucero - velocidad_paseo));
+        acelerador_deseable = 120*((velocidad_crucero - velocidad)/(velocidad_crucero - velocidad_paseo));
       }
       else {
         acelerador_deseable = 0;
